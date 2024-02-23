@@ -11,7 +11,7 @@ using Orders.Backend.Data;
 namespace Orders.Backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240223003733_InitialDb")]
+    [Migration("20240223005849_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
