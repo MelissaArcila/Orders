@@ -16,7 +16,7 @@ namespace Orders.Backend
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));
+            builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));//el name debe ser el mismo que se indique en el string connection
 
             var app = builder.Build();
 
