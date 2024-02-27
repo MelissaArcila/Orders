@@ -18,6 +18,10 @@ namespace Orders.Backend
             builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));//el name debe ser el mismo que se indique en el string connection
 
             var app = builder.Build();
+            app.UseCors(x => x.AllowAnyMethod()
+                  .AllowAnyMethod()
+                  .SetIsOriginAllowed(origin => true)
+                  .AllowCredentials());
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())//en esta linea se controla que cuando estemos en pruebas nos abra swagger
