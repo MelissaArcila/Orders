@@ -9,13 +9,12 @@ namespace Orders.Backend
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-
+            
+              
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            //Inyectar la conexion de la base de datos 
             builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));//el name debe ser el mismo que se indique en el string connection
 
             var app = builder.Build();
