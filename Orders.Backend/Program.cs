@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using Orders.Backend.Data;
 
@@ -9,12 +8,11 @@ namespace Orders.Backend
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            
-              
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            //Inyectar la conexion de la base de datos 
+            //Inyectar la conexion de la base de datos
             builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));//el name debe ser el mismo que se indique en el string connection
 
             var app = builder.Build();
@@ -33,7 +31,6 @@ namespace Orders.Backend
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

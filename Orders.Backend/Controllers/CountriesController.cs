@@ -14,8 +14,9 @@ namespace Orders.Backend.Controllers
         // del tipo DataContext
         private readonly DataContext _context;
 
-        //inyectar la BD por constructor, es un principio solid,
-        public CountriesController(DataContext context)
+        //inyectar la BD por constructor, es un principio solid
+        //es el constructor
+        public CountriesController(DataContext context)// inyeccion de DataContext, esta en la configuracion que hicimos en program.cs - hay otra forma de hacerlo pero esta forma nos permite mockiar para als pruebas unitarias
         {
             _context = context;
         }
