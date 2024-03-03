@@ -14,7 +14,7 @@ namespace Orders.FrontEnd
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             //en C# hay 3 formas de inyectar, scope es una de ellas 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7265//") });//la url es la que provee los serviicos de backend al frontend
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7235") });//la url es la que provee los serviicos de backend al frontend
             builder.Services.AddScoped<IRepository, Repository>(); //aca inyectamos la implementacion
 
             await builder.Build().RunAsync();
